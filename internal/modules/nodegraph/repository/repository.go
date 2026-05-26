@@ -1,9 +1,10 @@
 package repository
 
 import (
-	"github.com/k8spacket/k8spacket/internal/modules/nodegraph/model"
 	"regexp"
 	"time"
+
+	"github.com/k8spacket/k8spacket/internal/modules/nodegraph/model"
 )
 
 type Repository[T model.ConnectionItem] interface {

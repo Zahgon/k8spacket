@@ -4,9 +4,7 @@
 package ebpf_inet
 
 import (
-	"bytes"
 	_ "embed"
-	"fmt"
 	"io"
 	"structs"
 
@@ -35,15 +33,7 @@ type bpfEvent struct {
 }
 
 // loadBpf returns the embedded CollectionSpec for bpf.
-func loadBpf() (*ebpf.CollectionSpec, error) {
-	reader := bytes.NewReader(_BpfBytes)
-	spec, err := ebpf.LoadCollectionSpecFromReader(reader)
-	if err != nil {
-		return nil, fmt.Errorf("can't load bpf: %w", err)
-	}
-
-	return spec, err
-}
+func loadBpf() (*ebpf.CollectionSpec, error) { _ = "STUB: not implemented"; return nil, nil }
 
 // loadBpfObjects loads bpf and converts it into a struct.
 //
@@ -55,12 +45,8 @@ func loadBpf() (*ebpf.CollectionSpec, error) {
 //
 // See ebpf.CollectionSpec.LoadAndAssign documentation for details.
 func loadBpfObjects(obj interface{}, opts *ebpf.CollectionOptions) error {
-	spec, err := loadBpf()
-	if err != nil {
-		return err
-	}
-
-	return spec.LoadAndAssign(obj, opts)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // bpfSpecs contains maps and programs before they are loaded into the kernel.
@@ -103,12 +89,7 @@ type bpfObjects struct {
 	bpfVariables
 }
 
-func (o *bpfObjects) Close() error {
-	return _BpfClose(
-		&o.bpfPrograms,
-		&o.bpfMaps,
-	)
-}
+func (o *bpfObjects) Close() error { _ = "STUB: not implemented"; return nil }
 
 // bpfMaps contains all maps after they have been loaded into the kernel.
 //
@@ -118,12 +99,7 @@ type bpfMaps struct {
 	Events *ebpf.Map `ebpf:"events"`
 }
 
-func (m *bpfMaps) Close() error {
-	return _BpfClose(
-		m.Births,
-		m.Events,
-	)
-}
+func (m *bpfMaps) Close() error { _ = "STUB: not implemented"; return nil }
 
 // bpfVariables contains all global variables after they have been loaded into the kernel.
 //
@@ -139,20 +115,9 @@ type bpfPrograms struct {
 	InetSockSetState *ebpf.Program `ebpf:"inet_sock_set_state"`
 }
 
-func (p *bpfPrograms) Close() error {
-	return _BpfClose(
-		p.InetSockSetState,
-	)
-}
+func (p *bpfPrograms) Close() error { _ = "STUB: not implemented"; return nil }
 
-func _BpfClose(closers ...io.Closer) error {
-	for _, closer := range closers {
-		if err := closer.Close(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
+func _BpfClose(closers ...io.Closer) error { _ = "STUB: not implemented"; return nil }
 
 // Do not access this directly.
 //

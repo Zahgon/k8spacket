@@ -7,12 +7,11 @@
 package model
 
 import (
+	sync "sync"
+
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
-	reflect "reflect"
-	sync "sync"
-	unsafe "unsafe"
 )
 
 const (
@@ -41,124 +40,46 @@ type ConnectionItem struct {
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *ConnectionItem) Reset() {
-	*x = ConnectionItem{}
-	mi := &file_internal_proto_nodegraph_model_model_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
+func (x *ConnectionItem) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ConnectionItem) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ConnectionItem) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ConnectionItem) ProtoMessage() {}
+func (*ConnectionItem) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ConnectionItem) ProtoReflect() protoreflect.Message {
-	mi := &file_internal_proto_nodegraph_model_model_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ConnectionItem.ProtoReflect.Descriptor instead.
-func (*ConnectionItem) Descriptor() ([]byte, []int) {
-	return file_internal_proto_nodegraph_model_model_proto_rawDescGZIP(), []int{0}
-}
+func (*ConnectionItem) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *ConnectionItem) GetSrc() string {
-	if x != nil {
-		return x.Src
-	}
-	return ""
-}
+func (x *ConnectionItem) GetSrc() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ConnectionItem) GetSrcName() string {
-	if x != nil {
-		return x.SrcName
-	}
-	return ""
-}
+func (x *ConnectionItem) GetSrcName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ConnectionItem) GetSrcNamespace() string {
-	if x != nil {
-		return x.SrcNamespace
-	}
-	return ""
-}
+func (x *ConnectionItem) GetSrcNamespace() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ConnectionItem) GetDst() string {
-	if x != nil {
-		return x.Dst
-	}
-	return ""
-}
+func (x *ConnectionItem) GetDst() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ConnectionItem) GetDstName() string {
-	if x != nil {
-		return x.DstName
-	}
-	return ""
-}
+func (x *ConnectionItem) GetDstName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ConnectionItem) GetDstNamespace() string {
-	if x != nil {
-		return x.DstNamespace
-	}
-	return ""
-}
+func (x *ConnectionItem) GetDstNamespace() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ConnectionItem) GetConnCount() int64 {
-	if x != nil {
-		return x.ConnCount
-	}
-	return 0
-}
+func (x *ConnectionItem) GetConnCount() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ConnectionItem) GetConnPersistent() int64 {
-	if x != nil {
-		return x.ConnPersistent
-	}
-	return 0
-}
+func (x *ConnectionItem) GetConnPersistent() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ConnectionItem) GetBytesSent() float64 {
-	if x != nil {
-		return x.BytesSent
-	}
-	return 0
-}
+func (x *ConnectionItem) GetBytesSent() float64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ConnectionItem) GetBytesReceived() float64 {
-	if x != nil {
-		return x.BytesReceived
-	}
-	return 0
-}
+func (x *ConnectionItem) GetBytesReceived() float64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ConnectionItem) GetDuration() float64 {
-	if x != nil {
-		return x.Duration
-	}
-	return 0
-}
+func (x *ConnectionItem) GetDuration() float64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ConnectionItem) GetMaxDuration() float64 {
-	if x != nil {
-		return x.MaxDuration
-	}
-	return 0
-}
+func (x *ConnectionItem) GetMaxDuration() float64 { _ = "STUB: not implemented"; return 0 }
 
 func (x *ConnectionItem) GetLastSeen() *timestamppb.Timestamp {
-	if x != nil {
-		return x.LastSeen
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -189,10 +110,8 @@ var (
 )
 
 func file_internal_proto_nodegraph_model_model_proto_rawDescGZIP() []byte {
-	file_internal_proto_nodegraph_model_model_proto_rawDescOnce.Do(func() {
-		file_internal_proto_nodegraph_model_model_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_internal_proto_nodegraph_model_model_proto_rawDesc), len(file_internal_proto_nodegraph_model_model_proto_rawDesc)))
-	})
-	return file_internal_proto_nodegraph_model_model_proto_rawDescData
+	_ = "STUB: not implemented"
+	return nil
 }
 
 var file_internal_proto_nodegraph_model_model_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
@@ -209,26 +128,5 @@ var file_internal_proto_nodegraph_model_model_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_internal_proto_nodegraph_model_model_proto_init() }
-func file_internal_proto_nodegraph_model_model_proto_init() {
-	if File_internal_proto_nodegraph_model_model_proto != nil {
-		return
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_internal_proto_nodegraph_model_model_proto_rawDesc), len(file_internal_proto_nodegraph_model_model_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   1,
-			NumExtensions: 0,
-			NumServices:   0,
-		},
-		GoTypes:           file_internal_proto_nodegraph_model_model_proto_goTypes,
-		DependencyIndexes: file_internal_proto_nodegraph_model_model_proto_depIdxs,
-		MessageInfos:      file_internal_proto_nodegraph_model_model_proto_msgTypes,
-	}.Build()
-	File_internal_proto_nodegraph_model_model_proto = out.File
-	file_internal_proto_nodegraph_model_model_proto_goTypes = nil
-	file_internal_proto_nodegraph_model_model_proto_depIdxs = nil
-}
+func init()                                                 { file_internal_proto_nodegraph_model_model_proto_init() }
+func file_internal_proto_nodegraph_model_model_proto_init() { _ = "STUB: not implemented"; return }

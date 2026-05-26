@@ -1,7 +1,5 @@
 package modules
 
-import "fmt"
-
 type Address struct {
 	Addr      string
 	Port      uint16
@@ -24,16 +22,7 @@ const (
 	SocketFilter
 )
 
-func (source EventSource) String() string {
-	switch source {
-	case TC:
-		return "TC"
-	case SocketFilter:
-		return "SocketFilter"
-	default:
-		return fmt.Sprintf("EventSource(%d)", source)
-	}
-}
+func (source EventSource) String() string { _ = "STUB: not implemented"; return "" }
 
 type TLSEvent struct {
 	Source         EventSource

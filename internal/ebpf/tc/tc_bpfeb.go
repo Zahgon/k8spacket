@@ -4,9 +4,7 @@
 package ebpf_tc
 
 import (
-	"bytes"
 	_ "embed"
-	"fmt"
 	"io"
 	"structs"
 
@@ -32,15 +30,7 @@ type tcTlsHandshakeEvent struct {
 }
 
 // loadTc returns the embedded CollectionSpec for tc.
-func loadTc() (*ebpf.CollectionSpec, error) {
-	reader := bytes.NewReader(_TcBytes)
-	spec, err := ebpf.LoadCollectionSpecFromReader(reader)
-	if err != nil {
-		return nil, fmt.Errorf("can't load tc: %w", err)
-	}
-
-	return spec, err
-}
+func loadTc() (*ebpf.CollectionSpec, error) { _ = "STUB: not implemented"; return nil, nil }
 
 // loadTcObjects loads tc and converts it into a struct.
 //
@@ -52,12 +42,8 @@ func loadTc() (*ebpf.CollectionSpec, error) {
 //
 // See ebpf.CollectionSpec.LoadAndAssign documentation for details.
 func loadTcObjects(obj interface{}, opts *ebpf.CollectionOptions) error {
-	spec, err := loadTc()
-	if err != nil {
-		return err
-	}
-
-	return spec.LoadAndAssign(obj, opts)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // tcSpecs contains maps and programs before they are loaded into the kernel.
@@ -99,12 +85,7 @@ type tcObjects struct {
 	tcVariables
 }
 
-func (o *tcObjects) Close() error {
-	return _TcClose(
-		&o.tcPrograms,
-		&o.tcMaps,
-	)
-}
+func (o *tcObjects) Close() error { _ = "STUB: not implemented"; return nil }
 
 // tcMaps contains all maps after they have been loaded into the kernel.
 //
@@ -114,12 +95,7 @@ type tcMaps struct {
 	OutputEvents *ebpf.Map `ebpf:"output_events"`
 }
 
-func (m *tcMaps) Close() error {
-	return _TcClose(
-		m.Events,
-		m.OutputEvents,
-	)
-}
+func (m *tcMaps) Close() error { _ = "STUB: not implemented"; return nil }
 
 // tcVariables contains all global variables after they have been loaded into the kernel.
 //
@@ -134,20 +110,9 @@ type tcPrograms struct {
 	TcFilter *ebpf.Program `ebpf:"tc_filter"`
 }
 
-func (p *tcPrograms) Close() error {
-	return _TcClose(
-		p.TcFilter,
-	)
-}
+func (p *tcPrograms) Close() error { _ = "STUB: not implemented"; return nil }
 
-func _TcClose(closers ...io.Closer) error {
-	for _, closer := range closers {
-		if err := closer.Close(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
+func _TcClose(closers ...io.Closer) error { _ = "STUB: not implemented"; return nil }
 
 // Do not access this directly.
 //

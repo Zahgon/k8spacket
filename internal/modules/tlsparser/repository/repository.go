@@ -1,8 +1,9 @@
 package repository
 
 import (
-	"github.com/k8spacket/k8spacket/internal/modules/tlsparser/model"
 	"time"
+
+	"github.com/k8spacket/k8spacket/internal/modules/tlsparser/model"
 )
 
 type Repository interface {

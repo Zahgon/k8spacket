@@ -4,9 +4,7 @@
 package ebpf_socketfilter
 
 import (
-	"bytes"
 	_ "embed"
-	"fmt"
 	"io"
 	"structs"
 
@@ -32,15 +30,7 @@ type socketfilterTlsHandshakeEvent struct {
 }
 
 // loadSocketfilter returns the embedded CollectionSpec for socketfilter.
-func loadSocketfilter() (*ebpf.CollectionSpec, error) {
-	reader := bytes.NewReader(_SocketfilterBytes)
-	spec, err := ebpf.LoadCollectionSpecFromReader(reader)
-	if err != nil {
-		return nil, fmt.Errorf("can't load socketfilter: %w", err)
-	}
-
-	return spec, err
-}
+func loadSocketfilter() (*ebpf.CollectionSpec, error) { _ = "STUB: not implemented"; return nil, nil }
 
 // loadSocketfilterObjects loads socketfilter and converts it into a struct.
 //
@@ -52,12 +42,8 @@ func loadSocketfilter() (*ebpf.CollectionSpec, error) {
 //
 // See ebpf.CollectionSpec.LoadAndAssign documentation for details.
 func loadSocketfilterObjects(obj interface{}, opts *ebpf.CollectionOptions) error {
-	spec, err := loadSocketfilter()
-	if err != nil {
-		return err
-	}
-
-	return spec.LoadAndAssign(obj, opts)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // socketfilterSpecs contains maps and programs before they are loaded into the kernel.
@@ -99,12 +85,7 @@ type socketfilterObjects struct {
 	socketfilterVariables
 }
 
-func (o *socketfilterObjects) Close() error {
-	return _SocketfilterClose(
-		&o.socketfilterPrograms,
-		&o.socketfilterMaps,
-	)
-}
+func (o *socketfilterObjects) Close() error { _ = "STUB: not implemented"; return nil }
 
 // socketfilterMaps contains all maps after they have been loaded into the kernel.
 //
@@ -114,12 +95,7 @@ type socketfilterMaps struct {
 	OutputEvents *ebpf.Map `ebpf:"output_events"`
 }
 
-func (m *socketfilterMaps) Close() error {
-	return _SocketfilterClose(
-		m.Events,
-		m.OutputEvents,
-	)
-}
+func (m *socketfilterMaps) Close() error { _ = "STUB: not implemented"; return nil }
 
 // socketfilterVariables contains all global variables after they have been loaded into the kernel.
 //
@@ -134,20 +110,9 @@ type socketfilterPrograms struct {
 	SocketHttpFilter *ebpf.Program `ebpf:"socket__http_filter"`
 }
 
-func (p *socketfilterPrograms) Close() error {
-	return _SocketfilterClose(
-		p.SocketHttpFilter,
-	)
-}
+func (p *socketfilterPrograms) Close() error { _ = "STUB: not implemented"; return nil }
 
-func _SocketfilterClose(closers ...io.Closer) error {
-	for _, closer := range closers {
-		if err := closer.Close(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
+func _SocketfilterClose(closers ...io.Closer) error { _ = "STUB: not implemented"; return nil }
 
 // Do not access this directly.
 //

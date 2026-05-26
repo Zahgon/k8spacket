@@ -13,27 +13,18 @@ type DistributionBroker struct {
 }
 
 func Init(nodegraphListener modules.Listener[modules.TCPEvent], tlsParserListener modules.Listener[modules.TLSEvent]) *DistributionBroker {
-	broker := DistributionBroker{NodegraphListener: nodegraphListener, TlsParserListener: tlsParserListener}
-	broker.tcpEventChannel = make(chan modules.TCPEvent)
-	broker.tlsEventChannel = make(chan modules.TLSEvent)
-	return &broker
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (broker *DistributionBroker) TCPEvent(event modules.TCPEvent) {
-	broker.tcpEventChannel <- event
+	_ = "STUB: not implemented"
+	return
 }
 
 func (broker *DistributionBroker) TLSEvent(event modules.TLSEvent) {
-	broker.tlsEventChannel <- event
+	_ = "STUB: not implemented"
+	return
 }
 
-func (broker *DistributionBroker) DistributeEvents() {
-	for {
-		select {
-		case event := <-broker.tcpEventChannel:
-			broker.NodegraphListener.Listen(event)
-		case event := <-broker.tlsEventChannel:
-			broker.TlsParserListener.Listen(event)
-		}
-	}
-}
+func (broker *DistributionBroker) DistributeEvents() { _ = "STUB: not implemented"; return }

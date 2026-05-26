@@ -2,8 +2,6 @@ package prometheus
 
 import (
 	"github.com/prometheus/client_golang/prometheus"
-	"os"
-	"strconv"
 )
 
 var (
@@ -31,14 +29,4 @@ var (
 	)
 )
 
-func Init() {
-	sendTLSRecordsMetrics, _ := strconv.ParseBool(os.Getenv("K8S_PACKET_TLS_RECORDS_METRICS_ENABLED"))
-	if sendTLSRecordsMetrics {
-		prometheus.MustRegister(K8sPacketTLSRecordMetric)
-	}
-	sendTLSExpirationMetrics, _ := strconv.ParseBool(os.Getenv("K8S_PACKET_TLS_EXPIRATION_METRICS_ENABLED"))
-	if sendTLSExpirationMetrics {
-		prometheus.MustRegister(K8sPacketTLSCertificateExpirationMetric)
-		prometheus.MustRegister(K8sPacketTLSCertificateExpirationCounterMetric)
-	}
-}
+func Init() { _ = "STUB: not implemented"; return }

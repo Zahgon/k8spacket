@@ -7,5 +7,6 @@ type HttpClient struct {
 }
 
 func (httpClient *HttpClient) Do(req *http.Request) (*http.Response, error) {
-	return http.DefaultClient.Do(req)
+	_ = "STUB: not implemented"
+	return nil, nil
 }

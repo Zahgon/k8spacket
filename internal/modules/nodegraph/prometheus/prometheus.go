@@ -2,8 +2,6 @@ package prometheus
 
 import (
 	"github.com/prometheus/client_golang/prometheus"
-	"os"
-	"strconv"
 )
 
 var (
@@ -30,11 +28,4 @@ var (
 	)
 )
 
-func Init() {
-	sendTCPMetrics, _ := strconv.ParseBool(os.Getenv("K8S_PACKET_TCP_METRICS_ENABLED"))
-	if sendTCPMetrics {
-		prometheus.MustRegister(K8sPacketBytesSentMetric)
-		prometheus.MustRegister(K8sPacketBytesReceivedMetric)
-		prometheus.MustRegister(K8sPacketDurationSecondsMetric)
-	}
-}
+func Init() { _ = "STUB: not implemented"; return }

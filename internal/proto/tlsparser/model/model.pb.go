@@ -7,12 +7,11 @@
 package model
 
 import (
+	sync "sync"
+
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
-	reflect "reflect"
-	sync "sync"
-	unsafe "unsafe"
 )
 
 const (
@@ -32,63 +31,27 @@ type Certificate struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *Certificate) Reset() {
-	*x = Certificate{}
-	mi := &file_internal_proto_tlsparser_model_model_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
+func (x *Certificate) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *Certificate) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *Certificate) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*Certificate) ProtoMessage() {}
+func (*Certificate) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *Certificate) ProtoReflect() protoreflect.Message {
-	mi := &file_internal_proto_tlsparser_model_model_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use Certificate.ProtoReflect.Descriptor instead.
-func (*Certificate) Descriptor() ([]byte, []int) {
-	return file_internal_proto_tlsparser_model_model_proto_rawDescGZIP(), []int{0}
-}
+func (*Certificate) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *Certificate) GetNotBefore() *timestamppb.Timestamp {
-	if x != nil {
-		return x.NotBefore
-	}
-	return nil
-}
+func (x *Certificate) GetNotBefore() *timestamppb.Timestamp { _ = "STUB: not implemented"; return nil }
 
-func (x *Certificate) GetNotAfter() *timestamppb.Timestamp {
-	if x != nil {
-		return x.NotAfter
-	}
-	return nil
-}
+func (x *Certificate) GetNotAfter() *timestamppb.Timestamp { _ = "STUB: not implemented"; return nil }
 
-func (x *Certificate) GetServerChain() string {
-	if x != nil {
-		return x.ServerChain
-	}
-	return ""
-}
+func (x *Certificate) GetServerChain() string { _ = "STUB: not implemented"; return "" }
 
-func (x *Certificate) GetLastScrape() *timestamppb.Timestamp {
-	if x != nil {
-		return x.LastScrape
-	}
-	return nil
-}
+func (x *Certificate) GetLastScrape() *timestamppb.Timestamp { _ = "STUB: not implemented"; return nil }
 
 type TLSDetails struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
@@ -105,98 +68,37 @@ type TLSDetails struct {
 	sizeCache          protoimpl.SizeCache
 }
 
-func (x *TLSDetails) Reset() {
-	*x = TLSDetails{}
-	mi := &file_internal_proto_tlsparser_model_model_proto_msgTypes[1]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
+func (x *TLSDetails) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *TLSDetails) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *TLSDetails) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*TLSDetails) ProtoMessage() {}
+func (*TLSDetails) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *TLSDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_internal_proto_tlsparser_model_model_proto_msgTypes[1]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use TLSDetails.ProtoReflect.Descriptor instead.
-func (*TLSDetails) Descriptor() ([]byte, []int) {
-	return file_internal_proto_tlsparser_model_model_proto_rawDescGZIP(), []int{1}
-}
+func (*TLSDetails) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *TLSDetails) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
+func (x *TLSDetails) GetId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSDetails) GetDomain() string {
-	if x != nil {
-		return x.Domain
-	}
-	return ""
-}
+func (x *TLSDetails) GetDomain() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSDetails) GetDst() string {
-	if x != nil {
-		return x.Dst
-	}
-	return ""
-}
+func (x *TLSDetails) GetDst() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSDetails) GetPort() uint32 {
-	if x != nil {
-		return x.Port
-	}
-	return 0
-}
+func (x *TLSDetails) GetPort() uint32 { _ = "STUB: not implemented"; return 0 }
 
-func (x *TLSDetails) GetClientTLSVersions() []string {
-	if x != nil {
-		return x.ClientTLSVersions
-	}
-	return nil
-}
+func (x *TLSDetails) GetClientTLSVersions() []string { _ = "STUB: not implemented"; return nil }
 
-func (x *TLSDetails) GetClientCipherSuites() []string {
-	if x != nil {
-		return x.ClientCipherSuites
-	}
-	return nil
-}
+func (x *TLSDetails) GetClientCipherSuites() []string { _ = "STUB: not implemented"; return nil }
 
-func (x *TLSDetails) GetUsedTLSVersion() string {
-	if x != nil {
-		return x.UsedTLSVersion
-	}
-	return ""
-}
+func (x *TLSDetails) GetUsedTLSVersion() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSDetails) GetUsedCipherSuite() string {
-	if x != nil {
-		return x.UsedCipherSuite
-	}
-	return ""
-}
+func (x *TLSDetails) GetUsedCipherSuite() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSDetails) GetCertificate() *Certificate {
-	if x != nil {
-		return x.Certificate
-	}
-	return nil
-}
+func (x *TLSDetails) GetCertificate() *Certificate { _ = "STUB: not implemented"; return nil }
 
 type TLSConnection struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
@@ -215,112 +117,41 @@ type TLSConnection struct {
 	sizeCache       protoimpl.SizeCache
 }
 
-func (x *TLSConnection) Reset() {
-	*x = TLSConnection{}
-	mi := &file_internal_proto_tlsparser_model_model_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
+func (x *TLSConnection) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *TLSConnection) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *TLSConnection) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*TLSConnection) ProtoMessage() {}
+func (*TLSConnection) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *TLSConnection) ProtoReflect() protoreflect.Message {
-	mi := &file_internal_proto_tlsparser_model_model_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use TLSConnection.ProtoReflect.Descriptor instead.
-func (*TLSConnection) Descriptor() ([]byte, []int) {
-	return file_internal_proto_tlsparser_model_model_proto_rawDescGZIP(), []int{2}
-}
+func (*TLSConnection) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *TLSConnection) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
+func (x *TLSConnection) GetId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSConnection) GetSrc() string {
-	if x != nil {
-		return x.Src
-	}
-	return ""
-}
+func (x *TLSConnection) GetSrc() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSConnection) GetSrcName() string {
-	if x != nil {
-		return x.SrcName
-	}
-	return ""
-}
+func (x *TLSConnection) GetSrcName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSConnection) GetSrcNamespace() string {
-	if x != nil {
-		return x.SrcNamespace
-	}
-	return ""
-}
+func (x *TLSConnection) GetSrcNamespace() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSConnection) GetDst() string {
-	if x != nil {
-		return x.Dst
-	}
-	return ""
-}
+func (x *TLSConnection) GetDst() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSConnection) GetDstName() string {
-	if x != nil {
-		return x.DstName
-	}
-	return ""
-}
+func (x *TLSConnection) GetDstName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSConnection) GetDstPort() uint32 {
-	if x != nil {
-		return x.DstPort
-	}
-	return 0
-}
+func (x *TLSConnection) GetDstPort() uint32 { _ = "STUB: not implemented"; return 0 }
 
-func (x *TLSConnection) GetDomain() string {
-	if x != nil {
-		return x.Domain
-	}
-	return ""
-}
+func (x *TLSConnection) GetDomain() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSConnection) GetUsedTLSVersion() string {
-	if x != nil {
-		return x.UsedTLSVersion
-	}
-	return ""
-}
+func (x *TLSConnection) GetUsedTLSVersion() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSConnection) GetUsedCipherSuite() string {
-	if x != nil {
-		return x.UsedCipherSuite
-	}
-	return ""
-}
+func (x *TLSConnection) GetUsedCipherSuite() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TLSConnection) GetLastSeen() *timestamppb.Timestamp {
-	if x != nil {
-		return x.LastSeen
-	}
-	return nil
-}
+func (x *TLSConnection) GetLastSeen() *timestamppb.Timestamp { _ = "STUB: not implemented"; return nil }
 
 var File_internal_proto_tlsparser_model_model_proto protoreflect.FileDescriptor
 
@@ -365,10 +196,8 @@ var (
 )
 
 func file_internal_proto_tlsparser_model_model_proto_rawDescGZIP() []byte {
-	file_internal_proto_tlsparser_model_model_proto_rawDescOnce.Do(func() {
-		file_internal_proto_tlsparser_model_model_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_internal_proto_tlsparser_model_model_proto_rawDesc), len(file_internal_proto_tlsparser_model_model_proto_rawDesc)))
-	})
-	return file_internal_proto_tlsparser_model_model_proto_rawDescData
+	_ = "STUB: not implemented"
+	return nil
 }
 
 var file_internal_proto_tlsparser_model_model_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
@@ -391,26 +220,5 @@ var file_internal_proto_tlsparser_model_model_proto_depIdxs = []int32{
 	0, // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_internal_proto_tlsparser_model_model_proto_init() }
-func file_internal_proto_tlsparser_model_model_proto_init() {
-	if File_internal_proto_tlsparser_model_model_proto != nil {
-		return
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_internal_proto_tlsparser_model_model_proto_rawDesc), len(file_internal_proto_tlsparser_model_model_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   3,
-			NumExtensions: 0,
-			NumServices:   0,
-		},
-		GoTypes:           file_internal_proto_tlsparser_model_model_proto_goTypes,
-		DependencyIndexes: file_internal_proto_tlsparser_model_model_proto_depIdxs,
-		MessageInfos:      file_internal_proto_tlsparser_model_model_proto_msgTypes,
-	}.Build()
-	File_internal_proto_tlsparser_model_model_proto = out.File
-	file_internal_proto_tlsparser_model_model_proto_goTypes = nil
-	file_internal_proto_tlsparser_model_model_proto_depIdxs = nil
-}
+func init()                                                 { file_internal_proto_tlsparser_model_model_proto_init() }
+func file_internal_proto_tlsparser_model_model_proto_init() { _ = "STUB: not implemented"; return }

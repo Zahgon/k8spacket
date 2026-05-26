@@ -1,12 +1,8 @@
 package dict
 
-func ParseTLSVersion(version uint16) string {
-	return tlsVersions[version]
-}
+func ParseTLSVersion(version uint16) string { _ = "STUB: not implemented"; return "" }
 
-func ParseCipherSuite(cipherSuite uint16) string {
-	return cipherSuites[cipherSuite]
-}
+func ParseCipherSuite(cipherSuite uint16) string { _ = "STUB: not implemented"; return "" }
 
 var tlsVersions = map[uint16]string{
 	0x0300: "SSL 3.0",
